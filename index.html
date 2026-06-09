@@ -1,0 +1,455 @@
+<!doctype html>
+<html class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ergo-Tag: Smart Workplace Wellness</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    html, body { height: 100%; width: 100%; }
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slide-down { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+    .animate-fade-in { animation: fade-in 0.5s ease-out; }
+    .animate-slide-down { animation: slide-down 0.3s ease-out; }
+    .animate-pulse { animation: pulse 2s ease-in-out infinite; }
+    .timer-ring { border-width: 4px; border-style: solid; }
+    
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body class="h-full">
+  <div id="app" class="h-full w-full overflow-auto bg-gradient-to-br from-slate-50 to-slate-100">
+   
+   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
+     
+     <div class="flex items-center gap-2">
+      <div class="p-1.5 bg-blue-50 rounded-lg shrink-0">
+        <i data-lucide="activity" class="w-5 h-5 md:w-6 md:h-6 text-blue-600"></i>
+      </div>
+      <h1 id="app-title" class="text-lg md:text-xl font-bold text-slate-900 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+        Ergo-Tag: Smart Workplace Wellness
+      </h1>
+     </div>
+     
+     <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth snap-x">
+      <button id="nav-home" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0" onclick="showSection('home')">Home</button> 
+      <button id="nav-exercises" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0" onclick="showSection('exercises')">Exercises</button> 
+      <button id="nav-posture" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0" onclick="showSection('posture')">Posture Tips</button> 
+     </div>
+
+    </div>
+   </nav>
+
+   <section id="section-home" class="min-h-full pt-8 pb-16">
+    <div class="max-w-6xl mx-auto px-4">
+     <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Welcome to Ergo-Tag</h2>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-8">Smart Workplace Wellness for Your 9–6 Workday</p>
+      <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center gap-2"> 
+        <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Start Exercising 
+      </button>
+     </div>
+     
+     <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-12 max-w-4xl mx-auto">
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
+       <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+         <i data-lucide="clock" style="width:24px;height:24px;color:#3b82f6;"></i>
+       </div>
+       <h3 class="text-lg font-semibold text-slate-900 mb-2">Quick Breaks</h3>
+       <p class="text-slate-600 text-sm leading-relaxed">Complete exercises in just 1 minute. Perfect for your busy workday.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
+       <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+         <i data-lucide="heart" style="width:24px;height:24px;color:#10b981;"></i>
+       </div>
+       <h3 class="text-lg font-semibold text-slate-900 mb-2">Pain Relief</h3>
+       <p class="text-slate-600 text-sm leading-relaxed">Targeted exercises for your specific discomfort areas.</p>
+      </div>
+     </div>
+     
+     <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center max-w-4xl mx-auto">
+      <p class="text-slate-700"><strong>💡 Pro Tip:</strong> Take a 1-minute wellness break every 60–90 minutes during your 9 AM–6 PM workday for maximum benefit.</p>
+     </div>
+    </div>
+   </section>
+
+   <section id="section-exercises" class="hidden min-h-full pt-8 pb-16">
+    <div class="max-w-6xl mx-auto px-4">
+     <div id="category-header">
+       <h2 class="text-3xl font-bold text-slate-900 mb-2">Select Your Discomfort Area</h2>
+       <p class="text-slate-600 mb-8">Choose where you're experiencing discomfort and get targeted exercises.</p>
+     </div>
+     
+     <div id="category-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"></div>
+
+     <div id="exercise-view" class="hidden">
+      <button onclick="backToCategories()" class="mb-6 px-4 py-2 flex items-center gap-2 text-blue-600 hover:bg-blue-50 rounded-lg transition font-medium"> 
+        <i data-lucide="arrow-left" style="width:20px;height:20px;"></i> Back to Categories
+      </button>
+      <div id="current-exercise" class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 mb-8"></div>
+     </div>
+    </div>
+   </section>
+
+   <section id="section-posture" class="hidden min-h-full pt-8 pb-16">
+    <div class="max-w-6xl mx-auto px-4">
+     <h2 class="text-3xl font-bold text-slate-900 mb-8">Ergonomic Workstation Setup</h2>
+     <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+       <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="monitor" style="width:24px;height:24px;color:#3b82f6;"></i>
+       </div>
+       <h3 class="text-xl font-semibold text-slate-900 mb-3">Monitor Position</h3>
+       <ul class="space-y-2 text-slate-600">
+        <li>✓ Top of screen at eye level</li>
+        <li>✓ 20–28 inches away from eyes</li>
+        <li>✓ Slight downward angle (15–20°)</li>
+        <li>✓ Reduce glare with anti-glare screen</li>
+       </ul>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+       <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="armchair" style="width:24px;height:24px;color:#10b981;"></i>
+       </div>
+       <h3 class="text-xl font-semibold text-slate-900 mb-3">Seating</h3>
+       <ul class="space-y-2 text-slate-600">
+        <li>✓ Feet flat on floor (90° angle)</li>
+        <li>✓ Hips and knees at 90°</li>
+        <li>✓ Lower back supported</li>
+        <li>✓ Armrests at elbow height</li>
+       </ul>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+       <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="keyboard" style="width:24px;height:24px;color:#8b5cf6;"></i>
+       </div>
+       <h3 class="text-xl font-semibold text-slate-900 mb-3">Keyboard &amp; Mouse</h3>
+       <ul class="space-y-2 text-slate-600">
+        <li>✓ Elbows at 90° angle</li>
+        <li>✓ Wrists straight, not bent</li>
+        <li>✓ Mouse close to keyboard</li>
+        <li>✓ Use keyboard tray if needed</li>
+       </ul>
+      </div>
+      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+       <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="smile" style="width:24px;height:24px;color:#f97316;"></i>
+       </div>
+       <h3 class="text-xl font-semibold text-slate-900 mb-3">Head &amp; Neck</h3>
+       <ul class="space-y-2 text-slate-600">
+        <li>✓ Chin parallel to ground</li>
+        <li>✓ Shoulders relaxed</li>
+        <li>✓ Avoid forward head posture</li>
+        <li>✓ Neck in neutral position</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <footer class="bg-slate-900 text-white py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
+     <p>Ergo-Tag © 2026 — Helping you stay healthy and productive during your 9–6 workday</p>
+    </div>
+   </footer>
+  </div>
+
+  <script>
+    let allFeedback = [];
+
+    const categories = {
+      "Eye Strain": {
+        icon: "eye",
+        exercises: [
+          {
+            name: "20-20-20 Eye Rest",
+            desc: "Look at something 20 feet away for 20 seconds. Blink frequently.",
+            duration: 20,
+            steps: ["Find an object 20+ feet away", "Gaze at it for 20 seconds", "Blink every 3–4 seconds", "Return to work"]
+          },
+          {
+            name: "Eye Rolling Stretch",
+            desc: "Roll your eyes smoothly to lubricate and relax ocular muscles.",
+            duration: 20,
+            steps: ["Look up as high as possible", "Slowly roll eyes clockwise 5 times", "Roll eyes counter-clockwise 5 times", "Close eyes and rest for 5 seconds"]
+          },
+          {
+            name: "Palming Focus",
+            desc: "Use friction heat from your hands to soothe tired retinas.",
+            duration: 30,
+            steps: ["Rub hands together until warm", "Cup palms over closed eyes gently", "Breath deeply in total darkness", "Slowly open your eyes"]
+          }
+        ]
+      },
+      "Neck Pain": {
+        icon: "plus",
+        exercises: [
+          {
+            name: "Seated Neck Tilt",
+            desc: "Release tension along the levator scapulae from prolonged looking down.",
+            duration: 20,
+            steps: ["Sit straight, lower your shoulders", "Tilt right ear towards right shoulder", "Hold for 10 seconds and breathe", "Switch to the left side"]
+          },
+          {
+            name: "The Chin Tuck",
+            desc: "Reverses 'forward head posture' caused by looking at monitors.",
+            duration: 15,
+            steps: ["Look straight ahead", "Pull your chin straight back like a turtle", "Hold the double-chin pose for 5 seconds", "Repeat 3 times smoothly"]
+          },
+          {
+            name: "Desk Neck Rotation",
+            desc: "Improves neck range of motion safely at your desk.",
+            duration: 25,
+            steps: ["Turn head slowly to the right look over shoulder", "Hold for 5 seconds", "Turn slowly to the left look over shoulder", "Hold for 5 seconds"]
+          }
+        ]
+      },
+      "Shoulder Tension": {
+        icon: "activity",
+        exercises: [
+          {
+            name: "Shoulder Shrug & Release",
+            desc: "Resets the trapezius muscles from typing stress.",
+            duration: 20,
+            steps: ["Raise shoulders up towards ears tightly", "Hold the tension for 3 seconds", "Drop them down completely and exhale", "Repeat 5 times"]
+          },
+          {
+            name: "Desk Chest Opener",
+            desc: "Counteracts hunching forward over the keyboard.",
+            duration: 30,
+            steps: ["Interlock fingers behind your back", "Straighten arms and lift chest high", "Squeeze shoulder blades together", "Hold for 15 seconds"]
+          },
+          {
+            name: "Seated Shoulder Roll",
+            desc: "Restores blood flow to compressed shoulder joints.",
+            duration: 20,
+            steps: ["Place fingertips on your shoulders", "Roll elbows forward in big circles (5x)", "Roll elbows backward in big circles (5x)", "Relax arms completely"]
+          }
+        ]
+      },
+      "Back Pain": {
+        icon: "accessibility",
+        exercises: [
+          {
+            name: "Seated Spinal Twist",
+            desc: "Relieves lower back compression from static sitting.",
+            duration: 20,
+            steps: ["Sit tall, place left hand on right knee", "Twist torso to look over right shoulder", "Hold for 10 seconds", "Switch sides and repeat"]
+          },
+          {
+            name: "Seated Cat-Cow Stretch",
+            desc: "Mobilizes the lumbar and thoracic spine at your workstation.",
+            duration: 30,
+            steps: ["Hands on knees, inhale and arch back (Cow)", "Exhale, round spine and tuck chin (Cat)", "Move smoothly between poses", "Repeat for 30 seconds"]
+          },
+          {
+            name: "Reach for the Sky",
+            desc: "Decompresses intervertebral discs after hours of sitting.",
+            duration: 15,
+            steps: ["Interlock fingers with palms facing up", "Extend arms straight above your head", "Lengthen spine as if reaching up", "Hold for 15 seconds"]
+          }
+        ]
+      },
+      "Wrist Fatigue": {
+        icon: "hand",
+        exercises: [
+          {
+            name: "Wrist Flexor Stretch",
+            desc: "Prevents Carpal Tunnel Syndrome from heavy mouse usage.",
+            duration: 20,
+            steps: ["Extend right arm forward, palm facing out/up", "Use left hand to pull fingers back gently", "Hold for 10 seconds feeling the forearm stretch", "Repeat on the left hand"]
+          },
+          {
+            name: "The Prayer Wrist Stretch",
+            desc: "Relaxes tight tendons inside the wrists.",
+            duration: 20,
+            steps: ["Place palms together in front of chest", "Slowly lower hands down to waist level", "Keep palms pressed together", "Hold stretch for 15 seconds"]
+          },
+          {
+            name: "Air Typing Wrist Rolls",
+            desc: "Releases synovial fluid into static wrist joints.",
+            duration: 15,
+            steps: ["Make loose fists with both hands", "Rotate wrists outward 10 times", "Rotate wrists inward 10 times", "Shake hands out vigorously"]
+          }
+        ]
+      },
+      "Feeling Sleepy": {
+        icon: "moon",
+        exercises: [
+          {
+            name: "Energizing Box Breath",
+            desc: "Increases oxygen saturation to combat the 3PM slumps.",
+            duration: 20,
+            steps: ["Inhale deeply through nose for 4 seconds", "Hold your breath for 4 seconds", "Exhale fully through mouth for 4 seconds", "Repeat cycle 3 times"]
+          },
+          {
+            name: "Seated Marching",
+            desc: "Gets the heart pumping and breaks desk lethargy.",
+            duration: 30,
+            steps: ["Sit slightly forward on your chair", "March your feet up and down rapidly", "Pump your arms at the same time", "Continue for 30 seconds to boost adrenaline"]
+          },
+          {
+            name: "The Power Pose Stand",
+            desc: "Hormonal boost to reduce cortisol and increase alertness.",
+            duration: 25,
+            steps: ["Stand up tall with feet wide apart", "Place hands firmly on hips, chest out", "Look up slightly and breathe proudly", "Hold for 20 seconds"]
+          }
+        ]
+      }
+    };
+
+    let currentCategory = null;
+    let currentExerciseIndex = 0;
+
+    function showSection(section) {
+      document.querySelectorAll('section[id^="section-"]').forEach(s => s.classList.add('hidden'));
+      document.getElementById(`section-${section}`).classList.remove('hidden');
+      
+      document.querySelectorAll('button[id^="nav-"]').forEach(b => {
+        b.classList.remove('bg-blue-600', 'text-white');
+        b.classList.add('text-slate-700', 'hover:bg-slate-100');
+      });
+      document.getElementById(`nav-${section}`).classList.add('bg-blue-600', 'text-white');
+    }
+
+    function renderCategories() {
+      const grid = document.getElementById('category-grid');
+      grid.innerHTML = '';
+      Object.entries(categories).forEach(([name, data]) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition';
+        card.innerHTML = `
+          <div>
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="${data.icon}" class="w-6 h-6 text-blue-600"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-1">${name}</h3>
+            <p class="text-sm text-slate-500 mb-6">${data.exercises.length} exercises</p>
+          </div>
+          <button onclick="selectCategory('${name}')" class="w-full py-2.5 bg-slate-50 hover:bg-blue-50 text-blue-600 font-semibold rounded-lg transition text-center border border-slate-100 hover:border-blue-200">
+            View Exercises
+          </button>
+        `;
+        grid.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    function selectCategory(categoryName) {
+      currentCategory = categoryName;
+      currentExerciseIndex = 0;
+      document.getElementById('category-header').classList.add('hidden');
+      document.getElementById('category-grid').classList.add('hidden');
+      document.getElementById('exercise-view').classList.remove('hidden');
+      displayExercise();
+    }
+
+    function backToCategories() {
+      currentCategory = null;
+      document.getElementById('exercise-view').classList.add('hidden');
+      document.getElementById('category-header').classList.remove('hidden');
+      document.getElementById('category-grid').classList.remove('hidden');
+    }
+
+    function displayExercise() {
+      const exercises = categories[currentCategory].exercises;
+      const exercise = exercises[currentExerciseIndex];
+      
+      const container = document.getElementById('current-exercise');
+      container.innerHTML = `
+        <div class="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-0 mb-6">
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">${exercise.name}</h2>
+            <p class="text-slate-600 text-sm md:text-base">${exercise.desc}</p>
+          </div>
+          <span class="text-sm font-semibold bg-blue-50 text-blue-600 px-3 py-1 rounded-full self-start sm:self-auto">${currentExerciseIndex + 1}/${exercises.length}</span>
+        </div>
+
+        <div class="flex flex-col items-center mb-8 p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-100">
+          <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-blue-500 bg-white flex flex-col items-center justify-center mb-3 shadow-sm">
+            <span class="timer-text text-3xl md:text-4xl font-bold text-slate-900">${exercise.duration}</span>
+          </div>
+          <p class="text-slate-500 text-xs md:text-sm mb-6">seconds</p>
+          <button id="start-btn" onclick="startTimer(${exercise.duration})" class="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm text-sm md:text-base">
+            Start Exercise
+          </button>
+        </div>
+
+        <div class="mb-8">
+          <h3 class="font-bold text-slate-900 text-base md:text-lg mb-4">How to Perform:</h3>
+          <ol class="space-y-3">
+            ${exercise.steps.map((step, i) => `
+              <li class="flex items-start gap-3 text-slate-700 text-sm md:text-base">
+                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-blue-600 font-bold text-xs shrink-0 mt-0.5">${i+1}</span>
+                <span>${step}</span>
+              </li>
+            `).join('')}
+          </ol>
+        </div>
+
+        <div class="flex gap-4 border-t border-slate-100 pt-6">
+          <button onclick="prevExercise()" ${currentExerciseIndex === 0 ? 'disabled class="px-4 py-2 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed text-sm"' : 'class="px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-sm"'} >
+            ← Previous
+          </button>
+          <button onclick="nextExercise()" ${currentExerciseIndex === exercises.length - 1 ? 'disabled class="px-4 py-2 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed ml-auto text-sm"' : 'class="px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium ml-auto text-sm"'} >
+            Next →
+          </button>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    let countdown;
+    function startTimer(duration) {
+      clearInterval(countdown);
+      let remaining = duration;
+      const timerEl = document.querySelector('.timer-text');
+      const btn = document.getElementById('start-btn');
+      
+      btn.disabled = true;
+      btn.textContent = 'Running...';
+      btn.className = 'w-full sm:w-auto px-8 py-3 bg-slate-400 text-white rounded-xl font-semibold cursor-not-allowed shadow-sm text-sm md:text-base';
+      
+      countdown = setInterval(() => {
+        remaining--;
+        timerEl.textContent = remaining;
+        
+        if (remaining <= 0) {
+          clearInterval(countdown);
+          timerEl.textContent = '0';
+          btn.disabled = false;
+          btn.textContent = 'Completed';
+          btn.className = 'w-full sm:w-auto px-8 py-3 bg-green-600 text-white rounded-xl font-semibold shadow-sm text-sm md:text-base';
+        }
+      }, 1000);
+    }
+
+    function nextExercise() {
+      clearInterval(countdown);
+      const exercises = categories[currentCategory].exercises;
+      if (currentExerciseIndex < exercises.length - 1) {
+        currentExerciseIndex++;
+        displayExercise();
+      }
+    }
+
+    function prevExercise() {
+      clearInterval(countdown);
+      if (currentExerciseIndex > 0) {
+        currentExerciseIndex--;
+        displayExercise();
+      }
+    }
+
+    renderCategories();
+    showSection('home');
+    lucide.createIcons();
+  </script>
+ </body>
+</html>
