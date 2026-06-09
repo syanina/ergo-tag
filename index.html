@@ -42,9 +42,9 @@
      </div>
      
      <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth snap-x">
-      <button id="nav-home" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0" onclick="showSection('home')">Home</button> 
-      <button id="nav-exercises" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0" onclick="showSection('exercises')">Exercises</button> 
-      <button id="nav-posture" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0" onclick="showSection('posture')">Posture Tips</button> 
+      <button id="nav-home" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('home')">Home</button> 
+      <button id="nav-exercises" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('exercises')">Exercises</button> 
+      <button id="nav-posture" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('posture')">Posture Tips</button> 
      </div>
 
     </div>
@@ -78,20 +78,20 @@
       </div>
      </div>
      
-     <div class="bg-blue-600 text-white rounded-xl p-6 text-center max-w-4xl mx-auto shadow-sm">
-      <p class="text-blue-50"><strong>💡 Pro Tip:</strong> Take a 1-minute wellness break every 60–90 minutes during your 9 AM–6 PM workday for maximum benefit.</p>
+     <div class="bg-blue-50 border border-blue-100 text-slate-700 rounded-xl p-6 text-center max-w-4xl mx-auto shadow-sm">
+      <p class="text-slate-600"><strong>💡 Pro Tip:</strong> Take a 1-minute wellness break every 60–90 minutes during your 9 AM–6 PM workday for maximum benefit.</p>
      </div>
     </div>
    </section>
 
-   <section id="section-exercises" class="hidden flex-grow relative pt-8 pb-16 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
-    <div class="max-w-6xl mx-auto px-4">
+   <section id="section-exercises" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
+    <div class="max-w-6xl mx-auto px-4 w-full relative z-10">
      <div id="category-header">
        <h2 class="text-3xl font-bold text-slate-900 mb-2">Select Your Discomfort Area</h2>
        <p class="text-slate-600 mb-8">Choose where you're experiencing discomfort and get targeted exercises.</p>
      </div>
      
-     <div id="category-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"></div>
+     <div id="category-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 w-full"></div>
 
      <div id="exercise-view" class="hidden">
       <button onclick="backToCategories()" class="mb-6 px-4 py-2 flex items-center gap-2 text-blue-600 hover:bg-blue-50 rounded-lg transition font-medium"> 
@@ -102,7 +102,7 @@
     </div>
    </section>
 
-   <section id="section-posture" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
+   <section id="section-posture" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.85), rgba(241, 245, 249, 0.95)), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80');">
     <div class="max-w-6xl mx-auto px-4 relative z-10">
      <h2 class="text-3xl font-bold text-slate-900 mb-8">Ergonomic Workstation Setup</h2>
      <div class="grid md:grid-cols-2 gap-8">
@@ -164,7 +164,7 @@
   <script>
     let allFeedback = [];
 
-const categories = {
+    const categories = {
       "Eye Strain": {
         icon: "eye",
         color: { bg: "bg-blue-50", text: "text-blue-600", border: "hover:border-blue-600", hoverBg: "hover:bg-blue-50/40", btn: "text-blue-600 bg-blue-50/50 hover:bg-blue-50" },
@@ -319,10 +319,13 @@ const categories = {
       document.getElementById(`section-${section}`).classList.remove('hidden');
       
       document.querySelectorAll('button[id^="nav-"]').forEach(b => {
-        b.classList.remove('bg-blue-600', 'text-white');
-        b.classList.add('text-slate-700', 'hover:bg-slate-100');
+        b.className = "px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900";
       });
-      document.getElementById(`nav-${section}`).classList.add('bg-blue-600', 'text-white');
+      
+      const activeBtn = document.getElementById(`nav-${section}`);
+      if(activeBtn) {
+        activeBtn.className = "px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 bg-blue-600 text-white shadow-sm";
+      }
     }
 
     function renderCategories() {
@@ -330,8 +333,7 @@ const categories = {
       grid.innerHTML = '';
       Object.entries(categories).forEach(([name, data]) => {
         const card = document.createElement('div');
-        // DI SINI KITA TAMBAH ${data.color.hoverBg} pada card.className
-        card.className = `bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between ${data.color.border} ${data.color.hoverBg} hover:shadow-md transition duration-300 cursor-pointer`;
+        card.className = `bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between ${data.color.border} ${data.color.hoverBg} hover:shadow-md transition duration-300 cursor-pointer w-full`;
         card.innerHTML = `
           <div>
             <div class="w-12 h-12 ${data.color.bg} rounded-xl flex items-center justify-center mb-4">
@@ -345,7 +347,6 @@ const categories = {
           </button>
         `;
         
-        // Bonus: Syanina boleh klik dekat mana-mana kawasan kotak pun dia akan terus buka bahagian senaman tersebut
         card.onclick = (e) => {
           if (e.target.tagName !== 'BUTTON') {
             selectCategory(name);
