@@ -26,7 +26,8 @@
   <style>body { box-sizing: border-box; }</style>
  <script src="/_sdk/telemetry_sdk.js"></script></head>
  <body class="h-full">
-  <div id="app" class="h-full w-full overflow-auto bg-gradient-to-br from-slate-50 to-slate-100">
+  
+  <div id="app" class="min-h-screen w-full flex flex-col overflow-auto bg-gradient-to-br from-slate-50 to-slate-100">
    
    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-0">
@@ -49,18 +50,18 @@
     </div>
    </nav>
 
-   <section id="section-home" class="min-h-full pt-8 pb-16">
-    <div class="max-w-6xl mx-auto px-4">
+   <section id="section-home" class="flex-grow flex flex-col justify-center relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
+    <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
      <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Welcome to Ergo-Tag</h2>
-      <p id="app-tagline" class="text-xl text-slate-600 mb-8">Smart Workplace Wellness for Your 9–6 Workday</p>
-      <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center gap-2"> 
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Welcome to Ergo-Tag</h2>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Smart Workplace Wellness for Your 9–6 Workday</p>
+      <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center gap-2 shadow-md hover:shadow-lg"> 
         <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Start Exercising 
       </button>
      </div>
      
      <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-12 max-w-4xl mx-auto">
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
          <i data-lucide="clock" style="width:24px;height:24px;color:#3b82f6;"></i>
        </div>
@@ -68,7 +69,7 @@
        <p class="text-slate-600 text-sm leading-relaxed">Complete exercises in just 1 minute. Perfect for your busy workday.</p>
       </div>
       
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
          <i data-lucide="heart" style="width:24px;height:24px;color:#10b981;"></i>
        </div>
@@ -77,13 +78,13 @@
       </div>
      </div>
      
-     <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-center max-w-4xl mx-auto">
-      <p class="text-slate-700"><strong>💡 Pro Tip:</strong> Take a 1-minute wellness break every 60–90 minutes during your 9 AM–6 PM workday for maximum benefit.</p>
+     <div class="bg-blue-600 text-white rounded-xl p-6 text-center max-w-4xl mx-auto shadow-sm">
+      <p class="text-blue-50"><strong>💡 Pro Tip:</strong> Take a 1-minute wellness break every 60–90 minutes during your 9 AM–6 PM workday for maximum benefit.</p>
      </div>
     </div>
    </section>
 
-   <section id="section-exercises" class="hidden min-h-full pt-8 pb-16">
+   <section id="section-exercises" class="hidden flex-grow relative pt-8 pb-16 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto px-4">
      <div id="category-header">
        <h2 class="text-3xl font-bold text-slate-900 mb-2">Select Your Discomfort Area</h2>
@@ -101,11 +102,11 @@
     </div>
    </section>
 
-   <section id="section-posture" class="hidden min-h-full pt-8 pb-16">
-    <div class="max-w-6xl mx-auto px-4">
+   <section id="section-posture" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
+    <div class="max-w-6xl mx-auto px-4 relative z-10">
      <h2 class="text-3xl font-bold text-slate-900 mb-8">Ergonomic Workstation Setup</h2>
      <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200">
        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="monitor" style="width:24px;height:24px;color:#3b82f6;"></i>
        </div>
        <h3 class="text-xl font-semibold text-slate-900 mb-3">Monitor Position</h3>
@@ -116,7 +117,7 @@
         <li>✓ Reduce glare with anti-glare screen</li>
        </ul>
       </div>
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200">
        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="armchair" style="width:24px;height:24px;color:#10b981;"></i>
        </div>
        <h3 class="text-xl font-semibold text-slate-900 mb-3">Seating</h3>
@@ -127,7 +128,7 @@
         <li>✓ Armrests at elbow height</li>
        </ul>
       </div>
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200">
        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="keyboard" style="width:24px;height:24px;color:#8b5cf6;"></i>
        </div>
        <h3 class="text-xl font-semibold text-slate-900 mb-3">Keyboard &amp; Mouse</h3>
@@ -138,7 +139,7 @@
         <li>✓ Use keyboard tray if needed</li>
        </ul>
       </div>
-      <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-200">
+      <div class="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200">
        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4"><i data-lucide="smile" style="width:24px;height:24px;color:#f97316;"></i>
        </div>
        <h3 class="text-xl font-semibold text-slate-900 mb-3">Head &amp; Neck</h3>
@@ -153,7 +154,7 @@
     </div>
    </section>
 
-   <footer class="bg-slate-900 text-white py-6 mt-12">
+   <footer class="bg-slate-900 text-white py-6 mt-auto">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
      <p>Ergo-Tag © 2026 — Helping you stay healthy and productive during your 9–6 workday</p>
     </div>
@@ -163,9 +164,10 @@
   <script>
     let allFeedback = [];
 
-    const categories = {
+const categories = {
       "Eye Strain": {
         icon: "eye",
+        color: { bg: "bg-blue-50", text: "text-blue-600", border: "hover:border-blue-600", hoverBg: "hover:bg-blue-50/40", btn: "text-blue-600 bg-blue-50/50 hover:bg-blue-50" },
         exercises: [
           {
             name: "20-20-20 Eye Rest",
@@ -189,6 +191,7 @@
       },
       "Neck Pain": {
         icon: "frown",
+        color: { bg: "bg-rose-50", text: "text-rose-600", border: "hover:border-rose-600", hoverBg: "hover:bg-rose-50/40", btn: "text-rose-600 bg-rose-50/50 hover:bg-rose-50" },
         exercises: [
           {
             name: "Seated Neck Tilt",
@@ -212,6 +215,7 @@
       },
       "Shoulder Tension": {
         icon: "activity",
+        color: { bg: "bg-emerald-50", text: "text-emerald-600", border: "hover:border-emerald-600", hoverBg: "hover:bg-emerald-50/40", btn: "text-emerald-600 bg-emerald-50/50 hover:bg-emerald-50" },
         exercises: [
           {
             name: "Shoulder Shrug & Release",
@@ -235,6 +239,7 @@
       },
       "Back Pain": {
         icon: "accessibility",
+        color: { bg: "bg-amber-50", text: "text-amber-600", border: "hover:border-amber-600", hoverBg: "hover:bg-amber-50/40", btn: "text-amber-600 bg-amber-50/50 hover:bg-amber-50" },
         exercises: [
           {
             name: "Seated Spinal Twist",
@@ -258,6 +263,7 @@
       },
       "Wrist Fatigue": {
         icon: "hand",
+        color: { bg: "bg-purple-50", text: "text-purple-600", border: "hover:border-purple-600", hoverBg: "hover:bg-purple-50/40", btn: "text-purple-600 bg-purple-50/50 hover:bg-purple-50" },
         exercises: [
           {
             name: "Wrist Flexor Stretch",
@@ -281,6 +287,7 @@
       },
       "Feeling Sleepy": {
         icon: "moon",
+        color: { bg: "bg-indigo-50", text: "text-indigo-600", border: "hover:border-indigo-600", hoverBg: "hover:bg-indigo-50/40", btn: "text-indigo-600 bg-indigo-50/50 hover:bg-indigo-50" },
         exercises: [
           {
             name: "Energizing Box Breath",
@@ -323,19 +330,28 @@
       grid.innerHTML = '';
       Object.entries(categories).forEach(([name, data]) => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition';
+        // DI SINI KITA TAMBAH ${data.color.hoverBg} pada card.className
+        card.className = `bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between ${data.color.border} ${data.color.hoverBg} hover:shadow-md transition duration-300 cursor-pointer`;
         card.innerHTML = `
           <div>
-            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-              <i data-lucide="${data.icon}" class="w-6 h-6 text-blue-600"></i>
+            <div class="w-12 h-12 ${data.color.bg} rounded-xl flex items-center justify-center mb-4">
+              <i data-lucide="${data.icon}" class="w-6 h-6 ${data.color.text}"></i>
             </div>
             <h3 class="text-xl font-bold text-slate-900 mb-1">${name}</h3>
             <p class="text-sm text-slate-500 mb-6">${data.exercises.length} exercises</p>
           </div>
-          <button onclick="selectCategory('${name}')" class="w-full py-2.5 bg-slate-50 hover:bg-blue-50 text-blue-600 font-semibold rounded-lg transition text-center border border-slate-100 hover:border-blue-200">
+          <button onclick="selectCategory('${name}')" class="w-full py-2.5 ${data.color.btn} font-semibold rounded-lg transition text-center border border-transparent hover:border-current">
             View Exercises
           </button>
         `;
+        
+        // Bonus: Syanina boleh klik dekat mana-mana kawasan kotak pun dia akan terus buka bahagian senaman tersebut
+        card.onclick = (e) => {
+          if (e.target.tagName !== 'BUTTON') {
+            selectCategory(name);
+          }
+        };
+        
         grid.appendChild(card);
       });
       lucide.createIcons();
