@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ergo-Tag: Smart Workplace Wellness</title>
+  <title>Ergo-Tag: Kesejahteraan Tempat Kerja</title>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   <script src="/_sdk/element_sdk.js"></script>
@@ -37,14 +37,14 @@
         <i data-lucide="activity" class="w-5 h-5 md:w-6 md:h-6 text-blue-600"></i>
       </div>
       <h1 id="app-title" class="text-lg md:text-xl font-bold text-slate-900 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
-        Ergo-Tag: Smart Workplace Wellness
+        Ergo-Tag: Kesejahteraan Tempat Kerja
       </h1>
      </div>
      
-     <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth snap-x">
-      <button id="nav-home" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('home')">Home</button> 
-      <button id="nav-exercises" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('exercises')">Exercises</button> 
-      <button id="nav-posture" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('posture')">Posture Tips</button> 
+     <div class="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth snap-x">
+      <button id="nav-home" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('home')">Halaman Utama</button> 
+      <button id="nav-exercises" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('exercises')">Senaman</button> 
+      <button id="nav-posture" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm md:text-base transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('posture')">Tips Postur</button> 
      </div>
 
     </div>
@@ -53,10 +53,10 @@
    <section id="section-home" class="flex-grow flex flex-col justify-center relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
      <div class="text-center mb-12">
-      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Welcome to Ergo-Tag</h2>
-      <p id="app-tagline" class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Smart Workplace Wellness for Your 9–6 Workday</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Selamat Datang ke Ergo-Tag</h2>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Kesejahteraan Tempat Kerja untuk Waktu Kerja 9–6 Anda</p>
       <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center gap-2 shadow-md hover:shadow-lg"> 
-        <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Start Exercising 
+        <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Mula Bersenam 
       </button>
      </div>
      
@@ -65,21 +65,21 @@
        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
          <i data-lucide="clock" style="width:24px;height:24px;color:#3b82f6;"></i>
        </div>
-       <h3 class="text-lg font-semibold text-slate-900 mb-2">Quick Breaks</h3>
-       <p class="text-slate-600 text-sm leading-relaxed">Complete exercises in just 1 minute. Perfect for your busy workday.</p>
+       <h3 class="text-lg font-semibold text-slate-900 mb-2">Rehat Pantas</h3>
+       <p class="text-slate-600 text-sm leading-relaxed">Lengkapkan senaman dalam masa 1 minit sahaja. Sangat sesuai untuk waktu kerja anda yang sibuk.</p>
       </div>
       
       <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 max-w-sm">
        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
          <i data-lucide="heart" style="width:24px;height:24px;color:#10b981;"></i>
        </div>
-       <h3 class="text-lg font-semibold text-slate-900 mb-2">Pain Relief</h3>
-       <p class="text-slate-600 text-sm leading-relaxed">Targeted exercises for your specific discomfort areas.</p>
+       <h3 class="text-lg font-semibold text-slate-900 mb-2">Melegakan Kesakitan</h3>
+       <p class="text-slate-600 text-sm leading-relaxed">Senaman khusus yang disasarkan terus pada bahagian badan yang lenguh atau tidak selesa.</p>
       </div>
      </div>
      
      <div class="bg-blue-50 border border-blue-100 text-slate-700 rounded-xl p-6 text-center max-w-4xl mx-auto shadow-sm">
-      <p class="text-slate-600"><strong>💡 Pro Tip:</strong> Take a 1-minute wellness break every 60–90 minutes during your 9 AM–6 PM workday for maximum benefit.</p>
+      <p class="text-slate-600"><strong>💡 Tip Pro:</strong> Ambil rehat selama 1 minit setiap 60–90 minit sepanjang waktu kerja 9 pagi – 6 petang anda untuk kesan yang maksimum.</p>
      </div>
     </div>
    </section>
@@ -87,15 +87,15 @@
    <section id="section-exercises" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto px-4 w-full relative z-10">
      <div id="category-header">
-       <h2 class="text-3xl font-bold text-slate-900 mb-2">Select Your Discomfort Area</h2>
-       <p class="text-slate-600 mb-8">Choose where you're experiencing discomfort and get targeted exercises.</p>
+       <h2 class="text-3xl font-bold text-slate-900 mb-2">Pilih Bahagian Yang Lenguh / Sakit</h2>
+       <p class="text-slate-600 mb-8">Pilih kawasan discomfort anda untuk mendapatkan panduan senaman regangan yang disasarkan.</p>
      </div>
      
      <div id="category-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 w-full"></div>
 
      <div id="exercise-view" class="hidden">
       <button onclick="backToCategories()" class="mb-6 px-4 py-2 flex items-center gap-2 text-blue-600 hover:bg-blue-50 rounded-lg transition font-medium"> 
-        <i data-lucide="arrow-left" style="width:20px;height:20px;"></i> Back to Categories
+        <i data-lucide="arrow-left" style="width:20px;height:20px;"></i> Kembali ke Kategori
       </button>
       <div id="current-exercise" class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 mb-8"></div>
      </div>
@@ -104,19 +104,19 @@
 
    <section id="section-posture" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
-     <h2 class="text-3xl font-bold text-slate-900 mb-8">Ergonomic Workstation Setup</h2>
+     <h2 class="text-3xl font-bold text-slate-900 mb-8">Aturan Tempat Kerja Ergonomik</h2>
      <div class="grid md:grid-cols-2 gap-8">
        
       <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:border-blue-600 hover:bg-blue-50/40 hover:shadow-md transition duration-300">
        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
          <i data-lucide="monitor" class="w-6 h-6 text-blue-600"></i>
        </div>
-       <h3 class="text-xl font-bold text-slate-900 mb-3">Monitor Position</h3>
+       <h3 class="text-xl font-bold text-slate-900 mb-3">Kedudukan Monitor</h3>
        <ul class="space-y-2 text-slate-600 text-sm md:text-base">
-        <li>✓ Top of screen at eye level</li>
-        <li>✓ 20–28 inches away from eyes</li>
-        <li>✓ Slight downward angle (15–20°)</li>
-        <li>✓ Reduce glare with anti-glare screen</li>
+        <li>✓ Bahagian atas skrin setaras dengan paras mata</li>
+        <li>✓ Jarak antara skrin dan mata sekitar 20–28 inci</li>
+        <li>✓ Condong sedikit ke bawah (15–20°)</li>
+        <li>✓ Kurangkan silau menggunakan pelindung anti-silau</li>
        </ul>
       </div>
       
@@ -124,12 +124,12 @@
        <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center mb-4">
          <i data-lucide="armchair" class="w-6 h-6 text-rose-600"></i>
        </div>
-       <h3 class="text-xl font-bold text-slate-900 mb-3">Seating</h3>
+       <h3 class="text-xl font-bold text-slate-900 mb-3">Posisi Duduk</h3>
        <ul class="space-y-2 text-slate-600 text-sm md:text-base">
-        <li>✓ Feet flat on floor (90° angle)</li>
-        <li>✓ Hips and knees at 90°</li>
-        <li>✓ Lower back supported</li>
-        <li>✓ Armrests at elbow height</li>
+        <li>✓ Tapak kaki rata di atas lantai (sudut 90°)</li>
+        <li>✓ Pinggul dan lutut membentuk sudut 90°</li>
+        <li>✓ Bahagian bawah pinggang disokong dengan baik</li>
+        <li>✓ Penyandar lengan dilaraskan mengikut ketinggian siku</li>
        </ul>
       </div>
       
@@ -137,12 +137,12 @@
        <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-4">
          <i data-lucide="keyboard" class="w-6 h-6 text-purple-600"></i>
        </div>
-       <h3 class="text-xl font-bold text-slate-900 mb-3">Keyboard &amp; Mouse</h3>
+       <h3 class="text-xl font-bold text-slate-900 mb-3">Papan Kekunci &amp; Tetikus</h3>
        <ul class="space-y-2 text-slate-600 text-sm md:text-base">
-        <li>✓ Elbows at 90° angle</li>
-        <li>✓ Wrists straight, not bent</li>
-        <li>✓ Mouse close to keyboard</li>
-        <li>✓ Use keyboard tray if needed</li>
+        <li>✓ Siku diletakkan pada sudut 90°</li>
+        <li>✓ Pergelangan tangan lurus, tidak membengkok</li>
+        <li>✓ Tetikus diletakkan rapat dengan papan kekunci</li>
+        <li>✓ Gunakan laci papan kekunci jika perlu</li>
        </ul>
       </div>
       
@@ -150,12 +150,12 @@
        <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-4">
          <i data-lucide="smile" class="w-6 h-6 text-amber-600"></i>
        </div>
-       <h3 class="text-xl font-bold text-slate-900 mb-3">Head &amp; Neck</h3>
+       <h3 class="text-xl font-bold text-slate-900 mb-3">Kepala &amp; Leher</h3>
        <ul class="space-y-2 text-slate-600 text-sm md:text-base">
-        <li>✓ Chin parallel to ground</li>
-        <li>✓ Shoulders relaxed</li>
-        <li>✓ Avoid forward head posture</li>
-        <li>✓ Neck in neutral position</li>
+        <li>✓ Dagu selari dengan permukaan lantai</li>
+        <li>✓ Bahu berada dalam keadaan rehat (relax)</li>
+        <li>✓ Elakkan posisi kepala condong ke hadapan (*forward head*)</li>
+        <li>✓ Kekalkan leher pada kedudukan neutral</li>
        </ul>
       </div>
       
@@ -165,156 +165,158 @@
 
    <footer class="bg-slate-900 text-white py-6 mt-auto">
     <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
-     <p>Ergo-Tag © 2026 — Helping you stay healthy and productive during your 9–6 workday</p>
+     <p>Ergo-Tag © 2026 — Membantu anda kekal sihat dan produktif sepanjang waktu kerja 9–6 anda</p>
     </div>
    </footer>
   </div>
 
   <script>
+
     let allFeedback = [];
 
+    // --- TRANSLASI KATEGORI DAN LANGKAH SENAMAN ---
     const categories = {
-      "Eye Strain": {
+      "Mata Lesu": {
         icon: "eye",
         color: { bg: "bg-blue-50", text: "text-blue-600", border: "hover:border-blue-600", hoverBg: "hover:bg-blue-50/40", btn: "text-blue-600 bg-blue-50/50 hover:bg-blue-50" },
         exercises: [
           {
             name: "20-20-20 Eye Rest",
-            desc: "Look at something 20 feet away for 20 seconds. Blink frequently.",
+            desc: "Pandang objek sejauh 20 kaki selama 20 saat. Kerdipkan mata dengan kerap.",
             duration: 20,
-            steps: ["Find an object 20+ feet away", "Gaze at it for 20 seconds", "Blink every 3–4 seconds", "Return to work"]
+            steps: ["Cari objek yang berada 20+ kaki dari anda", "Fokus pandangan pada objek tersebut selama 20 saat", "Kerdipkan mata setiap 3–4 saat untuk elak kering", "Kembali fokus pada tugasan kerja"]
           },
           {
             name: "Eye Rolling Stretch",
-            desc: "Roll your eyes smoothly to lubricate and relax ocular muscles.",
+            desc: "Putar mata anda dengan lancar untuk melembapkan dan melegakan otot okular.",
             duration: 20,
-            steps: ["Look up as high as possible", "Slowly roll eyes clockwise 5 times", "Roll eyes counter-clockwise 5 times", "Close eyes and rest for 5 seconds"]
+            steps: ["Pandang ke atas setinggi yang boleh", "Putar mata mengikut arah jam secara perlahan sebanyak 5 kali", "Putar mata melawan arah jam sebanyak 5 kali", "Tutup mata dan rehat selama 5 saat"]
           },
           {
             name: "Palming Focus",
-            desc: "Use friction heat from your hands to soothe tired retinas.",
+            desc: "Gunakan haba semula jadi dari tapak tangan untuk menenangkan retina yang letih.",
             duration: 30,
-            steps: ["Rub hands together until warm", "Cup palms over closed eyes gently", "Breath deeply in total darkness", "Slowly open your eyes"]
+            steps: ["Gosok kedua-dua tapak tangan sehingga terasa suam", "Tekap tapak tangan dengan lembut di atas mata yang tertutup", "Tarik nafas dalam-dalam dalam keadaan gelap sepenuhnya", "Buka mata anda secara perlahan-lahan"]
           }
         ]
       },
-      "Neck Pain": {
+      "Sakit Leher": {
         icon: "frown",
         color: { bg: "bg-rose-50", text: "text-rose-600", border: "hover:border-rose-600", hoverBg: "hover:bg-rose-50/40", btn: "text-rose-600 bg-rose-50/50 hover:bg-rose-50" },
         exercises: [
           {
             name: "Seated Neck Tilt",
-            desc: "Release tension along the levator scapulae from prolonged looking down.",
+            desc: "Melegakan ketegangan otot leher (levator scapulae) akibat kerap menunduk.",
             duration: 20,
-            steps: ["Sit straight, lower your shoulders", "Tilt right ear towards right shoulder", "Hold for 10 seconds and breathe", "Switch to the left side"]
+            steps: ["Duduk tegak, turunkan dan rehatkan bahu anda", "Condongkan telinga kanan ke arah bahu kanan", "Tahan selama 10 saat sambil bernafas tenang", "Tukar ke bahagian kiri dan ulangi proses"]
           },
           {
-            name: "The Chin Tuck",
-            desc: "Reverses 'forward head posture' caused by looking at monitors.",
+            name: "Sorokan Dagu (Chin Tuck)",
+            desc: "Memulihkan posisi kepala condong ke hadapan akibat terlalu lama menghadap monitor.",
             duration: 15,
-            steps: ["Look straight ahead", "Pull your chin straight back like a turtle", "Hold the double-chin pose for 5 seconds", "Repeat 3 times smoothly"]
+            steps: ["Pandang lurus ke hadapan", "Tarik dagu anda terus ke belakang (seperti kura-kura menyorok)", "Tahan posisi 'dagu berlapis' ini selama 5 saat", "Lepaskan perlahan-lahan dan ulangi sebanyak 3 kali"]
           },
           {
             name: "Desk Neck Rotation",
-            desc: "Improves neck range of motion safely at your desk.",
+            desc: "Meningkatkan tahap julat pergerakan leher dengan selamat di meja anda.",
             duration: 25,
-            steps: ["Turn head slowly to the right look over shoulder", "Hold for 5 seconds", "Turn slowly to the left look over shoulder", "Hold for 5 seconds"]
+            steps: ["Palingkan kepala ke kanan perlahan-lahan melihat ke belakang bahu", "Tahan kedudukan tersebut selama 5 saat", "Palingkan kepala ke kiri perlahan-lahan melihat ke belakang bahu", "Tahan kedudukan tersebut selama 5 saat"]
           }
         ]
       },
-      "Shoulder Tension": {
+      "Ketegangan Bahu": {
         icon: "activity",
         color: { bg: "bg-emerald-50", text: "text-emerald-600", border: "hover:border-emerald-600", hoverBg: "hover:bg-emerald-50/40", btn: "text-emerald-600 bg-emerald-50/50 hover:bg-emerald-50" },
         exercises: [
           {
             name: "Shoulder Shrug & Release",
-            desc: "Resets the trapezius muscles from typing stress.",
+            desc: "Menetapkan semula otot trapezius daripada stres menaip terlalu lama.",
             duration: 20,
-            steps: ["Raise shoulders up towards ears tightly", "Hold the tension for 3 seconds", "Drop them down completely and exhale", "Repeat 5 times"]
+            steps: ["Angkat bahu tinggi-tinggi ke arah telinga dengan rapat", "Tahan ketegangan tersebut selama 3 saat", "Lepaskan bahu ke bawah sepenuhnya sambil menghembus nafas", "Ulangi proses ini sebanyak 5 kali"]
           },
           {
             name: "Desk Chest Opener",
-            desc: "Counteracts hunching forward over the keyboard.",
+            desc: "Mengimbangi postur badan yang membongkok ke hadapan di atas papan kekunci.",
             duration: 30,
-            steps: ["Interlock fingers behind your back", "Straighten arms and lift chest high", "Squeeze shoulder blades together", "Hold for 15 seconds"]
+            steps: ["Silangkan jari-jemari tangan di belakang badan anda", "Luruskan lengan dan angkat dada anda tinggi ke atas", "Rapatkan dan picit belikat bahu bersama-sama", "Tahan posisi regangan ini selama 15 saat"]
           },
           {
             name: "Seated Shoulder Roll",
-            desc: "Restores blood flow to compressed shoulder joints.",
+            desc: "Mengembalikan aliran darah ke sendi bahu yang tertekan.",
             duration: 20,
-            steps: ["Place fingertips on your shoulders", "Roll elbows forward in big circles (5x)", "Roll elbows backward in big circles (5x)", "Relax arms completely"]
+            steps: ["Letakkan hujung jari tangan di atas bahu anda", "Putar siku ke hadapan dalam bulatan besar (5 kali)", "Putar siku ke belakang dalam bulatan besar (5 kali)", "Rehatkan lengan anda sepenuhnya"]
           }
         ]
       },
-      "Back Pain": {
+      "Sakit Pinggang": {
         icon: "accessibility",
         color: { bg: "bg-amber-50", text: "text-amber-600", border: "hover:border-amber-600", hoverBg: "hover:bg-amber-50/40", btn: "text-amber-600 bg-amber-50/50 hover:bg-amber-50" },
         exercises: [
           {
             name: "Seated Spinal Twist",
-            desc: "Relieves lower back compression from static sitting.",
+            desc: "Melegakan tekanan pada bahagian bawah pinggang akibat duduk statik.",
             duration: 20,
-            steps: ["Sit tall, place left hand on right knee", "Twist torso to look over right shoulder", "Hold for 10 seconds", "Switch sides and repeat"]
+            steps: ["Duduk tegak, letakkan tangan kiri di atas lutut kanan", "Kilas badan/torso untuk memandang ke belakang bahu kanan", "Tahan kedudukan ini selama 10 saat", "Tukar bahagian ke sebelah kiri dan ulangi"]
           },
           {
             name: "Seated Cat-Cow Stretch",
-            desc: "Mobilizes the lumbar and thoracic spine at your workstation.",
+            desc: "Menggerakkan tulang belakang bahagian lumbar dan toraks di meja kerja anda.",
             duration: 30,
-            steps: ["Hands on knees, inhale and arch back (Cow)", "Exhale, round spine and tuck chin (Cat)", "Move smoothly between poses", "Repeat for 30 seconds"]
+            steps: ["Letakkan tangan di atas lutut, tarik nafas dan melengkungkan belakang (Cow)", "Hembus nafas, bulatkan tulang belakang dan tundukkan dagu (Cat)", "Bergerak secara lancar antara dua posisi ini", "Ulangi pergerakan selama 30 saat"]
           },
           {
             name: "Reach for the Sky",
-            desc: "Decompresses intervertebral discs after hours of sitting.",
+            desc: "Meregangkan cakera intervertebral tulang belakang selepas berjam-jam duduk.",
             duration: 15,
-            steps: ["Interlock fingers with palms facing up", "Extend arms straight above your head", "Lengthen spine as if reaching up", "Hold for 15 seconds"]
+            steps: ["Silangkan jari-jemari dengan tapak tangan menghadap ke atas", "Tolakkan lengan lurus ke atas siling/langit", "Panjangkan tulang belakang seolah-olah cuba menggapai tinggi", "Tahan posisi ini selama 15 saat"]
           }
         ]
       },
-      "Wrist Fatigue": {
+      "Keletihan Pergelangan Tangan": {
         icon: "hand",
         color: { bg: "bg-purple-50", text: "text-purple-600", border: "hover:border-purple-600", hoverBg: "hover:bg-purple-50/40", btn: "text-purple-600 bg-purple-50/50 hover:bg-purple-50" },
         exercises: [
           {
             name: "Wrist Flexor Stretch",
-            desc: "Prevents Carpal Tunnel Syndrome from heavy mouse usage.",
+            desc: "Mencegah Carpal Tunnel Syndrome akibat penggunaan tetikus yang lama.",
             duration: 20,
-            steps: ["Extend right arm forward, palm facing out/up", "Use left hand to pull fingers back gently", "Hold for 10 seconds feeling the forearm stretch", "Repeat on the left hand"]
+            steps: ["Luruskan lengan kanan ke hadapan, tapak tangan menghadap luar/atas", "Gunakan tangan kiri untuk menarik jari ke belakang dengan lembut", "Tahan selama 10 saat untuk merasakan regangan pada lengan bawah", "Ulangi langkah di atas pada tangan kiri"]
           },
           {
             name: "The Prayer Wrist Stretch",
-            desc: "Relaxes tight tendons inside the wrists.",
+            desc: "Melegakan tendon yang tegang di dalam pergelangan tangan.",
             duration: 20,
-            steps: ["Place palms together in front of chest", "Slowly lower hands down to waist level", "Keep palms pressed together", "Hold stretch for 15 seconds"]
+            steps: ["Rapatkan kedua-dua tapak tangan di hadapan dada (kedudukan berdoa)", "Turunkan tangan ke bawah secara perlahan sehingga paras pinggang", "Pastikan tapak tangan kekal rapat melekat antara satu sama lain", "Tahan posisi regangan ini selama 15 saat"]
           },
           {
             name: "Air Typing Wrist Rolls",
-            desc: "Releases synovial fluid into static wrist joints.",
+            desc: "Merembeskan cecair sinovial ke dalam sendi pergelangan tangan yang kaku.",
             duration: 15,
-            steps: ["Make loose fists with both hands", "Rotate wrists outward 10 times", "Rotate wrists inward 10 times", "Shake hands out vigorously"]
+            steps: ["Genggam kedua-dua belah tangan secara longgar", "Putarkan pergelangan tangan ke arah luar sebanyak 10 kali", "Putarkan pergelangan tangan ke arah dalam sebanyak 10 kali", "Goyang-goyangkan tangan anda dengan rancak untuk melepaskan sisa ketegangan"]
           }
         ]
       },
-      "Feeling Sleepy": {
+      "Mengantuk / Lemau": {
         icon: "moon",
         color: { bg: "bg-indigo-50", text: "text-indigo-600", border: "hover:border-indigo-600", hoverBg: "hover:bg-indigo-50/40", btn: "text-indigo-600 bg-indigo-50/50 hover:bg-indigo-50" },
         exercises: [
           {
-            name: "Energizing Box Breath",
-            desc: "Increases oxygen saturation to combat the 3PM slumps.",
+            name: "Pernafasan Kotak (Box Breathing)",
+            desc: "Meningkatkan tepuan oksigen dalam darah untuk melawan rasa mengantuk.",
             duration: 20,
-            steps: ["Inhale deeply through nose for 4 seconds", "Hold your breath for 4 seconds", "Exhale fully through mouth for 4 seconds", "Repeat cycle 3 times"]
+            steps: ["Tarik nafas dalam-dalam melalui hidung selama 4 saat", "Tahan nafas anda selama 4 saat", "Hembus nafas sepenuhnya melalui mulut selama 4 saat", "Ulangi kitaran pernafasan ini sebanyak 3 kali"]
           },
           {
-            name: "Seated Marching",
-            desc: "Gets the heart pumping and breaks desk lethargy.",
+            name: "Kawad Sambil Duduk",
+            desc: "Mengepam jantung dan memecahkan rasa lesu di meja pejabat.",
             duration: 30,
-            steps: ["Sit slightly forward on your chair", "March your feet up and down rapidly", "Pump your arms at the same time", "Continue for 30 seconds to boost adrenaline"]
+            steps: ["Duduk condong sedikit ke hadapan di atas kerusi anda", "Angkat dan hayun kaki ke atas dan bawah seperti berkawad secara pantas", "Hayunkan lengan anda bersama-sama pada masa yang sama", "Teruskan selama 30 saat untuk meningkatkan hormon adrenalin"]
           },
           {
-            name: "The Power Pose Stand",
-            desc: "Hormonal boost to reduce cortisol and increase alertness.",
+            name: "Posisi Kuasa (Power Pose)",
+            desc: "Rangsangan hormon untuk mengurangkan kortisol dan meningkatkan kewaspadaan.",
             duration: 25,
-            steps: ["Stand up tall with feet wide apart", "Place hands firmly on hips, chest out", "Look up slightly and breathe proudly", "Hold for 20 seconds"]
+            steps: ["Berdiri tegak dengan kaki dibuka luas", "Letakkan kedua-dua tangan di pinggang dengan kemas, busungkan dada", "Pandang ke atas sedikit dan bernafas dengan penuh yakin", "Tahan posisi megah ini selama 20 saat"]
           }
         ]
       }
@@ -349,10 +351,10 @@
               <i data-lucide="${data.icon}" class="w-6 h-6 ${data.color.text}"></i>
             </div>
             <h3 class="text-xl font-bold text-slate-900 mb-1">${name}</h3>
-            <p class="text-sm text-slate-500 mb-6">${data.exercises.length} exercises</p>
+            <p class="text-sm text-slate-500 mb-6">${data.exercises.length} senaman</p>
           </div>
           <button onclick="selectCategory('${name}')" class="w-full py-2.5 ${data.color.btn} font-semibold rounded-lg transition text-center border border-transparent hover:border-current">
-            View Exercises
+            Lihat Senaman
           </button>
         `;
         
@@ -401,14 +403,14 @@
           <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-blue-500 bg-white flex flex-col items-center justify-center mb-3 shadow-sm">
             <span class="timer-text text-3xl md:text-4xl font-bold text-slate-900">${exercise.duration}</span>
           </div>
-          <p class="text-slate-500 text-xs md:text-sm mb-6">seconds</p>
+          <p class="text-slate-500 text-xs md:text-sm mb-6">saat</p>
           <button id="start-btn" onclick="startTimer(${exercise.duration})" class="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm text-sm md:text-base">
-            Start Exercise
+            Mula Senaman
           </button>
         </div>
 
         <div class="mb-8">
-          <h3 class="font-bold text-slate-900 text-base md:text-lg mb-4">How to Perform:</h3>
+          <h3 class="font-bold text-slate-900 text-base md:text-lg mb-4">Cara Pelaksanaan:</h3>
           <ol class="space-y-3">
             ${exercise.steps.map((step, i) => `
               <li class="flex items-start gap-3 text-slate-700 text-sm md:text-base">
@@ -421,10 +423,10 @@
 
         <div class="flex gap-4 border-t border-slate-100 pt-6">
           <button onclick="prevExercise()" ${currentExerciseIndex === 0 ? 'disabled class="px-4 py-2 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed text-sm"' : 'class="px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-sm"'} >
-            ← Previous
+            ← Sebelumnya
           </button>
           <button onclick="nextExercise()" ${currentExerciseIndex === exercises.length - 1 ? 'disabled class="px-4 py-2 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed ml-auto text-sm"' : 'class="px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium ml-auto text-sm"'} >
-            Next →
+            Seterusnya →
           </button>
         </div>
       `;
@@ -439,7 +441,7 @@
       const btn = document.getElementById('start-btn');
       
       btn.disabled = true;
-      btn.textContent = 'Running...';
+      btn.textContent = 'Sila Ikuti Pergerakan...';
       btn.className = 'w-full sm:w-auto px-8 py-3 bg-slate-400 text-white rounded-xl font-semibold cursor-not-allowed shadow-sm text-sm md:text-base';
       
       countdown = setInterval(() => {
@@ -450,7 +452,7 @@
           clearInterval(countdown);
           timerEl.textContent = '0';
           btn.disabled = false;
-          btn.textContent = 'Completed';
+          btn.textContent = 'Selesai';
           btn.className = 'w-full sm:w-auto px-8 py-3 bg-green-600 text-white rounded-xl font-semibold shadow-sm text-sm md:text-base';
         }
       }, 1000);
