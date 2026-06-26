@@ -28,7 +28,6 @@
 
   <div id="app" class="min-h-screen w-full flex flex-col overflow-auto bg-gradient-to-br from-slate-50 to-slate-100">
    
-   <!-- BAR NAVIGASI RESPONSIF -->
    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200 shadow-sm">
     <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-0">
      
@@ -37,7 +36,7 @@
         <div class="p-1.5 bg-blue-50 rounded-lg shrink-0">
           <i data-lucide="activity" class="w-5 h-5 md:w-6 md:h-6 text-blue-600"></i>
         </div>
-        <h1 id="app-title" class="text-base md:text-xl font-bold text-slate-900 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
+        <h1 id="app-title" class="text-lg md:text-xl font-bold text-slate-900 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">
           Ergo-Tag: Kesejahteraan Tempat Kerja
         </h1>
       </div>
@@ -45,31 +44,28 @@
      
      <div class="flex items-center justify-between lg:justify-end gap-3 w-full lg:w-auto overflow-x-auto no-scrollbar pb-1 lg:pb-0">
       <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth snap-x w-full lg:w-auto">
-        <button id="nav-home" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('home')">Halaman Utama</button> 
-        <button id="nav-exercises" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('exercises')">Senaman</button> 
-        <button id="nav-posture" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('posture')">Tips Postur</button> 
-        <button id="nav-feedback" class="px-3.5 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('feedback')">Maklum Balas</button> 
+        <button id="nav-home" class="px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('home')">Halaman Utama</button> 
+        <button id="nav-exercises" class="px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('exercises')">Senaman</button> 
+        <button id="nav-posture" class="px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('posture')">Tips Postur</button> 
+        <button id="nav-feedback" class="px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-medium text-sm transition snap-center whitespace-nowrap shrink-0 text-slate-600 hover:bg-slate-50 hover:text-slate-900" onclick="showSection('feedback')">Maklum Balas</button> 
       </div>
      </div>
 
     </div>
    </nav>
 
-   <!-- HALAMAN UTAMA (HOME) -->
    <section id="section-home" class="flex-grow flex flex-col justify-center relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
      <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Selamat Datang ke Ergo-Tag</h2>
-      <p id="app-tagline" class="text-base md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Kesejahteraan Tempat Kerja untuk Waktu Kerja 9–6 Anda</p>
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center justify-center gap-2 shadow-md"> 
-          <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Mula Bersenam 
-        </button>
-      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Selamat Datang ke Ergo-Tag</h2>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Kesejahteraan Tempat Kerja untuk Waktu Kerja 9–6 Anda</p>
+      <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg"> 
+        <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Mula Bersenam 
+      </button>
      </div>
      
      <div class="flex flex-col md:flex-row justify-center items-stretch gap-6 mb-12 max-w-4xl mx-auto w-full">
-      <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 w-full">
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 w-full font-sans">
        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
          <i data-lucide="clock" style="width:24px;height:24px;color:#3b82f6;"></i>
        </div>
@@ -77,7 +73,7 @@
        <p class="text-slate-600 text-sm leading-relaxed">Lengkapkan senaman dalam masa 1 minit sahaja. Sangat sesuai untuk waktu kerja anda yang sibuk.</p>
       </div>
       
-      <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 w-full">
+      <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-slate-200 flex-1 w-full font-sans">
        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
          <i data-lucide="heart" style="width:24px;height:24px;color:#10b981;"></i>
        </div>
@@ -92,7 +88,6 @@
     </div>
    </section>
 
-   <!-- SEKSYEN SENAMAN -->
    <section id="section-exercises" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto px-4 w-full relative z-10">
      <div id="category-header">
@@ -106,12 +101,11 @@
       <button onclick="backToCategories()" class="mb-6 px-4 py-2 flex items-center gap-2 text-blue-600 hover:bg-blue-50 rounded-lg transition font-medium"> 
         <i data-lucide="arrow-left" style="width:20px;height:20px;"></i> Kembali ke Kategori
       </button>
-      <div id="current-exercise" class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-8 mb-8"></div>
+      <div id="current-exercise" class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 md:p-6 mb-8"></div>
      </div>
     </div>
    </section>
 
-   <!-- SEKSYEN TIPS POSTUR -->
    <section id="section-posture" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-6xl mx-auto w-full relative z-10 px-4">
      <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Aturan Tempat Kerja Ergonomik</h2>
@@ -173,27 +167,19 @@
     </div>
    </section>
 
-    <!-- 🚀 SEKSYEN MAKLUM BALAS: GOOGLE FORM INTEGRATION -->
    <section id="section-feedback" class="hidden flex-grow relative pt-12 pb-20 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.95)), url('bg-pejabat.png');">
     <div class="max-w-4xl mx-auto w-full relative z-10 px-4 flex flex-col h-full">
       <div class="text-center mb-6">
-        <h2 class="text-3xl font-bold text-slate-900 mb-2">Borang Maklum Balas</h2>
-        <p class="text-slate-600">Sila isi borang penilaian di bawah untuk membantu pemantauan tahap kesihatan warga pejabat.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">Borang Maklum Balas</h2>
+        <p class="text-sm text-slate-600">Sila isi borang penilaian di bawah untuk membantu pemantauan tahap kesihatan warga pejabat.</p>
       </div>
-
-      <!-- Kontainer Kad Google Form -->
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-2 md:p-4 flex-grow min-h-[500px]">
-        <!-- ⚠️ NOTA KAK NINA: Sila gantikan URL di dalam src bawah ini dengan pautan "Embed HTML" dari Google Form Kak Nina sendiri nanti -->
-        <iframe
-
-          src="https://docs.google.com/forms/d/e/1FAIpQLSckfie9eBRzSul2pl9U0pzTZLm8NIIBJWdNuUc584CFvWLLHQ/viewform?usp=publish-editor"
-
-          class="w-full h-[550px] border-0 rounded-lg"
-
+      
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-1 md:p-4 w-full min-h-[70vh] flex flex-col">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSckfie9eBRzSul2pl9U0pzTZLm8NIIBJWdNuUc584CFvWLLHQ/viewform?embedded=true" 
+          class="w-full flex-grow border-0 rounded-lg min-h-[500px]"
           allowfullscreen>
-
           Memuatkan borang...
-
         </iframe>
       </div>
     </div>
@@ -209,6 +195,8 @@
   <script>
     let allFeedback = [];
 
+    // 🚀 MENAMBAH VARIABEL 'videoUrl' PADA SETIAP SENAMAN
+    // Nota Kak Nina: Gantikan "nama_fail.gif" atau link mp4/youtube pendek dalam parameter videoUrl di bawah
     const categories = {
       "Mata Lesu": {
         icon: "eye",
@@ -218,18 +206,21 @@
             name: "Rehat Mata 20-20-20",
             desc: "Pandang objek sejauh 20 kaki selama 20 saat. Kerdipkan mata dengan kerap.",
             duration: 20,
+            videoUrl: "20-eye-strain.png",
             steps: ["Cari objek yang berada 20+ kaki dari anda", "Fokus pandangan pada objek tersebut selama 20 saat", "Kerdipkan mata setiap 3–4 saat untuk elak kering", "Kembali fokus pada tugasan kerja"]
           },
           {
             name: "Regangan Putaran Mata",
             desc: "Putar mata anda dengan lancar untuk melembapkan dan melegakan otot okular.",
             duration: 20,
+            videoUrl: "eye-rolling.png",
             steps: ["Pandang ke atas setinggi yang boleh", "Putar mata mengikut arah jam secara perlahan sebanyak 5 kali", "Putar mata melawan arah jam sebanyak 5 kali", "Tutup mata dan rehat selama 5 saat"]
           },
           {
             name: "Teknik Tekapan Tapak Mata",
             desc: "Gunakan haba semula jadi dari tapak tangan untuk menenangkan retina yang letih.",
             duration: 30,
+            videoUrl: "palming-warm-relaxation.png",
             steps: ["Gosok kedua-dua tapak tangan sehingga terasa suam", "Tekap tapak tangan dengan lembut di atas mata yang tertutup", "Tarik nafas dalam-dalam dalam keadaan gelap sepenuhnya", "Buka mata anda secara perlahan-lahan"]
           }
         ]
@@ -242,18 +233,21 @@
             name: "Senggukan Leher Sisi",
             desc: "Melegakan ketegangan otot leher (levator scapulae) akibat kerap menunduk.",
             duration: 20,
+            videoUrl: "neck-tilt.png",
             steps: ["Duduk tegak, turunkan dan rehatkan bahu anda", "Condongkan telinga kanan ke arah bahu kanan", "Tahan selama 10 saat sambil bernafas tenang", "Tukar ke bahagian kiri dan ulangi proses"]
           },
           {
             name: "Sorokan Dagu (Chin Tuck)",
             desc: "Memulihkan posisi kepala condong ke hadapan akibat terlalu lama menghadap monitor.",
             duration: 15,
+            videoUrl: "chin-tuck.png",
             steps: ["Pandang lurus ke hadapan", "Tarik dagu anda terus ke belakang (seperti kura-kura menyorok)", "Tahan posisi 'dagu berlapis' ini selama 5 saat", "Lepaskan perlahan-lahan dan ulangi sebanyak 3 kali"]
           },
           {
             name: "Putaran Leher Pejabat",
             desc: "Meningkatkan tahap julat pergerakan leher dengan selamat di meja anda.",
             duration: 25,
+            videoUrl: "neck-rotation.png",
             steps: ["Palingkan kepala ke kanan perlahan-lahan melihat ke belakang bahu", "Tahan kedudukan tersebut selama 5 saat", "Palingkan kepala ke kiri perlahan-lahan melihat ke belakang bahu", "Tahan kedudukan tersebut selama 5 saat"]
           }
         ]
@@ -263,21 +257,24 @@
         color: { bg: "bg-emerald-50", text: "text-emerald-600", border: "hover:border-emerald-600", hoverBg: "hover:bg-emerald-50/40", btn: "text-emerald-600 bg-emerald-50/50 hover:bg-emerald-50" },
         exercises: [
           {
-            name: "Angkat &amp; Lepas Bahu",
+            name: "Shoulder Shrug & Release",
             desc: "Menetapkan semula otot trapezius daripada stres menaip terlalu lama.",
             duration: 20,
+            videoUrl: "shoulder-shrug.png",
             steps: ["Angkat bahu tinggi-tinggi ke arah telinga dengan rapat", "Tahan ketegangan tersebut selama 3 saat", "Lepaskan bahu ke bawah sepenuhnya sambil menghembus nafas", "Ulangi proses ini sebanyak 5 kali"]
           },
           {
             name: "Regangan Pembuka Dada",
             desc: "Mengimbangi postur badan yang membongkok ke hadapan di atas papan kekunci.",
             duration: 30,
+            videoUrl: "chest-opener.png",
             steps: ["Silangkan jari-jemari tangan di belakang badan anda", "Luruskan lengan dan angkat dada anda tinggi ke atas", "Rapatkan dan picit belikat bahu bersama-sama", "Tahan posisi regangan ini selama 15 saat"]
           },
           {
-            name: "Putaran Bahu Sambil Duduk",
+            name: "Seated Shoulder Roll",
             desc: "Mengembalikan aliran darah ke sendi bahu yang tertekan.",
             duration: 20,
+            videoUrl: "shoulder-rolls.png",
             steps: ["Letakkan hujung jari tangan di atas bahu anda", "Putar siku ke hadapan dalam bulatan besar (5 kali)", "Putar siku ke belakang dalam bulatan besar (5 kali)", "Rehatkan lengan anda sepenuhnya"]
           }
         ]
@@ -287,21 +284,24 @@
         color: { bg: "bg-amber-50", text: "text-amber-600", border: "hover:border-amber-600", hoverBg: "hover:bg-amber-50/40", btn: "text-amber-600 bg-amber-50/50 hover:bg-amber-50" },
         exercises: [
           {
-            name: "Kilas Tulang Belakang",
+            name: "Seated Spinal Twist",
             desc: "Melegakan tekanan pada bahagian bawah pinggang akibat duduk statik.",
             duration: 20,
+            videoUrl: "spinal-twist.png",
             steps: ["Duduk tegak, letakkan tangan kiri di atas lutut kanan", "Kilas badan/torso untuk memandang ke belakang bahu kanan", "Tahan kedudukan ini selama 10 saat", "Tukar bahagian ke sebelah kiri dan ulangi"]
           },
           {
             name: "Regangan Cat-Cow Sambil Duduk",
             desc: "Menggerakkan tulang belakang bahagian lumbar dan toraks di meja kerja anda.",
             duration: 30,
+            videoUrl: "cat-cow.png",
             steps: ["Letakkan tangan di atas lutut, tarik nafas dan melengkungkan belakang (Cow)", "Hembus nafas, bulatkan tulang belakang dan tundukkan dagu (Cat)", "Bergerak secara lancar antara dua posisi ini", "Ulangi pergerakan selama 30 saat"]
           },
           {
             name: "Regangan Menggapai Langit",
             desc: "Meregangkan cakera intervertebral tulang belakang selepas berjam-jam duduk.",
             duration: 15,
+            videoUrl: "reach-sky.png",
             steps: ["Silangkan jari-jemari dengan tapak tangan menghadap ke atas", "Tolakkan lengan lurus ke atas siling/langit", "Panjangkan tulang belakang seolah-olah cuba menggapai tinggi", "Tahan posisi ini selama 15 saat"]
           }
         ]
@@ -314,18 +314,21 @@
             name: "Regangan Fleksor Pergelangan",
             desc: "Mencegah Sindrom Terowong Karpal akibat penggunaan tetikus yang lama.",
             duration: 20,
+            videoUrl: "flexor-stretch.png",
             steps: ["Luruskan lengan kanan ke hadapan, tapak tangan menghadap luar/atas", "Gunakan tangan kiri untuk menarik jari ke belakang dengan lembut", "Tahan selama 10 saat untuk merasakan regangan pada lengan bawah", "Ulangi langkah di atas pada tangan kiri"]
           },
           {
             name: "Regangan Tangan Berdoa",
             desc: "Melegakan tendon yang tegang di dalam pergelangan tangan.",
             duration: 20,
+            videoUrl: "prayer-wrist.png",
             steps: ["Rapatkan kedua-dua tapak tangan di hadapan dada (kedudukan berdoa)", "Turunkan tangan ke bawah secara perlahan sehingga paras pinggang", "Pastikan tapak tangan kekal rapat melekat antara satu sama lain", "Tahan posisi regangan ini selama 15 saat"]
           },
           {
             name: "Putaran Pergelangan Udara",
             desc: "Merembeskan cecair sinovial ke dalam sendi pergelangan tangan yang kaku.",
             duration: 15,
+            videoUrl: "air-typing.png",
             steps: ["Genggam kedua-dua belah tangan secara longgar", "Putarkan pergelangan tangan ke arah luar sebanyak 10 kali", "Putarkan pergelangan tangan ke arah dalam sebanyak 10 kali", "Goyang-goyangkan tangan anda dengan rancak untuk melepaskan sisa ketegangan"]
           }
         ]
@@ -338,18 +341,21 @@
             name: "Pernafasan Kotak (Box Breathing)",
             desc: "Meningkatkan tepuan oksigen dalam darah untuk melawan rasa mengantuk.",
             duration: 20,
+            videoUrl: "box-breath.png",
             steps: ["Tarik nafas dalam-dalam melalui hidung selama 4 saat", "Tahan nafas anda selama 4 saat", "Hembus nafas sepenuhnya melalui mulut selama 4 saat", "Ulangi kitaran pernafasan ini sebanyak 3 kali"]
           },
           {
             name: "Kawad Sambil Duduk",
             desc: "Mengepam jantung dan memecahkan rasa lesu di meja pejabat.",
             duration: 30,
+            videoUrl: "seated-marching.png",
             steps: ["Duduk condong sedikit ke hadapan di atas kerusi anda", "Angkat dan hayun kaki ke atas dan bawah seperti berkawad secara pantas", "Hayunkan lengan anda bersama-sama pada masa yang sama", "Teruskan selama 30 saat untuk meningkatkan hormon adrenalin"]
           },
           {
             name: "Posisi Kuasa (Power Pose)",
             desc: "Rangsangan hormon untuk mengurangkan kortisol dan meningkatkan kewaspadaan.",
             duration: 25,
+            videoUrl: "power-pose-stand.png",
             steps: ["Berdiri tegak dengan kaki dibuka luas", "Letakkan kedua-dua tangan di pinggang dengan kemas, busungkan dada", "Pandang ke atas sedikit dan bernafas dengan penuh yakin", "Tahan posisi megah ini selama 20 saat"]
           }
         ]
@@ -419,47 +425,66 @@
       document.getElementById('category-grid').classList.remove('hidden');
     }
 
+    // 🚀 STRUKTUR PAPARAN BARU DENGAN KOLOM VIDEO DEMONSTRASI (RESPONSIF)
     function displayExercise() {
       const exercises = categories[currentCategory].exercises;
       const exercise = exercises[currentExerciseIndex];
-      
       const container = document.getElementById('current-exercise');
+      
+      // Semak sama ada pautan video tersedia, jika tiada gunakan placeholder reka bentuk grafik yang cantik
+      const visualMedia = exercise.videoUrl 
+        ? `<img src="${exercise.videoUrl}" class="w-full h-full object-cover rounded-xl" alt="Demonstrasi Senaman" />`
+        : `<div class="w-full h-full bg-slate-100 rounded-xl flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+             <i data-lucide="video" class="w-10 h-10 mb-2 text-slate-300"></i>
+             <span class="text-xs font-medium">Panduan Visual Demonstrasi</span>
+           </div>`;
+
       container.innerHTML = `
         <div class="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-0 mb-6">
           <div>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">${exercise.name}</h2>
-            <p class="text-slate-600 text-sm md:text-base">${exercise.desc}</p>
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-1">${exercise.name}</h2>
+            <p class="text-slate-500 text-xs md:text-sm">${exercise.desc}</p>
           </div>
-          <span class="text-sm font-semibold bg-blue-50 text-blue-600 px-3 py-1 rounded-full self-start sm:self-auto">${currentExerciseIndex + 1}/${exercises.length}</span>
+          <span class="text-xs font-semibold bg-blue-50 text-blue-600 px-3 py-1 rounded-full self-start sm:self-auto">${currentExerciseIndex + 1}/${exercises.length}</span>
         </div>
 
-        <div class="flex flex-col items-center mb-8 p-6 md:p-8 bg-slate-50 rounded-2xl border border-slate-100">
-          <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-blue-500 bg-white flex flex-col items-center justify-center mb-3 shadow-sm">
-            <span class="timer-text text-3xl md:text-4xl font-bold text-slate-900">${exercise.duration}</span>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mb-6">
+          
+          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-2 h-48 sm:h-64 lg:h-auto min-h-[200px]">
+             ${visualMedia}
           </div>
-          <p class="text-slate-500 text-xs md:text-sm mb-6">saat</p>
-          <button id="start-btn" onclick="startTimer(${exercise.duration})" class="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm text-sm md:text-base">
-            Mula Senaman
-          </button>
+
+          <div class="flex flex-col justify-between bg-slate-50 rounded-2xl border border-slate-100 p-4 md:p-6">
+            <div class="flex flex-col items-center justify-center text-center my-auto">
+              <div class="w-24 h-28 md:w-28 md:h-28 rounded-full border-4 border-blue-500 bg-white flex flex-col items-center justify-center mb-2 shadow-sm">
+                <span class="timer-text text-2xl md:text-3xl font-bold text-slate-900">${exercise.duration}</span>
+              </div>
+              <p class="text-slate-400 text-[11px] mb-4">saat</p>
+              <button id="start-btn" onclick="startTimer(${exercise.duration})" class="w-full px-6 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm text-sm">
+                Mula Senaman
+              </button>
+            </div>
+          </div>
+
         </div>
 
-        <div class="mb-8">
-          <h3 class="font-bold text-slate-900 text-base md:text-lg mb-4">Cara Pelaksanaan:</h3>
-          <ol class="space-y-3">
+        <div class="mb-6 bg-white border border-slate-100 rounded-xl p-4">
+          <h3 class="font-bold text-slate-900 text-sm md:text-base mb-3">Cara Pelaksanaan:</h3>
+          <ol class="space-y-2.5">
             ${exercise.steps.map((step, i) => `
-              <li class="flex items-start gap-3 text-slate-700 text-sm md:text-base">
-                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 text-blue-600 font-bold text-xs shrink-0 mt-0.5">${i+1}</span>
+              <li class="flex items-start gap-3 text-slate-700 text-xs md:text-sm">
+                <span class="flex items-center justify-center w-5 h-5 rounded-full bg-blue-50 text-blue-600 font-bold text-[10px] shrink-0 mt-0.5">${i+1}</span>
                 <span>${step}</span>
               </li>
             `).join('')}
           </ol>
         </div>
 
-        <div class="flex gap-4 border-t border-slate-100 pt-6">
-          <button onclick="prevExercise()" ${currentExerciseIndex === 0 ? 'disabled class="px-4 py-2 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed text-sm"' : 'class="px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-sm"'} >
+        <div class="flex gap-4 border-t border-slate-100 pt-4">
+          <button onclick="prevExercise()" ${currentExerciseIndex === 0 ? 'disabled class="px-3 py-1.5 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed text-xs"' : 'class="px-3 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-xs"'} >
             ← Sebelumnya
           </button>
-          <button onclick="nextExercise()" ${currentExerciseIndex === exercises.length - 1 ? 'disabled class="px-4 py-2 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed ml-auto text-sm"' : 'class="px-4 py-2 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium ml-auto text-sm"'} >
+          <button onclick="nextExercise()" ${currentExerciseIndex === exercises.length - 1 ? 'disabled class="px-3 py-1.5 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed ml-auto text-xs"' : 'class="px-3 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium ml-auto text-xs"'} >
             Seterusnya →
           </button>
         </div>
@@ -476,7 +501,7 @@
       
       btn.disabled = true;
       btn.textContent = 'Sila Ikuti Pergerakan...';
-      btn.className = 'w-full sm:w-auto px-8 py-3 bg-slate-400 text-white rounded-xl font-semibold cursor-not-allowed shadow-sm text-sm md:text-base';
+      btn.className = 'w-full px-6 py-2.5 bg-slate-400 text-white rounded-xl font-semibold cursor-not-allowed shadow-sm text-sm';
       
       countdown = setInterval(() => {
         remaining--;
@@ -487,7 +512,7 @@
           timerEl.textContent = '0';
           btn.disabled = false;
           btn.textContent = 'Selesai';
-          btn.className = 'w-full sm:w-auto px-8 py-3 bg-green-600 text-white rounded-xl font-semibold shadow-sm text-sm md:text-base';
+          btn.className = 'w-full px-6 py-2.5 bg-green-600 text-white rounded-xl font-semibold shadow-sm text-sm';
         }
       }, 1000);
     }
