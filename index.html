@@ -371,15 +371,15 @@
           {
             name: "Kawad Sambil Duduk",
             desc: "Mengepam jantung dan memecahkan rasa lesu di meja pejabat.",
-            duration: 30,
+            duration: 52,
             videoUrl: "seated-marching.png",
             audioUrl: "seated-marching.mp3",
-            steps: ["Duduk condong sedikit ke hadapan di atas kerusi anda", "Angkat dan hayun kaki ke atas dan bawah seperti berkawad secara pantas", "Hayunkan lengan anda bersama-sama pada masa yang sama", "Teruskan selama 30 saat untuk meningkatkan hormon adrenalin"]
+            steps: ["Duduk condong sedikit ke hadapan di atas kerusi anda", "Angkat dan hayun kaki ke atas dan bawah seperti berkawad secara pantas", "Hayunkan lengan anda bersama-sama pada masa yang sama", "Teruskan selama 30 saat"]
           },
           {
             name: "Posisi Kuasa",
             desc: "Rangsangan hormon untuk mengurangkan kortisol dan meningkatkan kewaspadaan.",
-            duration: 30,
+            duration: 58,
             videoUrl: "power-pose-stand.png",
             audioUrl: "power-pose-stand.mp3",
             steps: ["Berdiri tegak dengan kaki dibuka seluas bahu", "Letakkan kedua-dua tangan di pinggang, tolak dada ke hadapan dan pastikan bahu anda dibuka ke belakang", "Dongakkan sedikit dagu anda", "Tarik nafas melalui hidung dan hembus perlahan-lahan melalui mulut", "Teruskan selama 30 saat"]
@@ -507,12 +507,6 @@
         visualMedia = `
           <div class="relative w-full h-full min-h-[220px]">
             <img src="${exercise.videoUrl}" class="w-full h-full object-cover rounded-xl" alt="Demonstrasi Senaman" />
-            ${exercise.audioUrl ? `
-              <button id="audio-control-btn" onclick="toggleAudio('${exercise.audioUrl}')" class="absolute bottom-3 left-3 bg-white/95 backdrop-blur shadow-md border border-slate-200 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-blue-50 transition active:scale-95 z-20">
-                <i data-lucide="volume-2" class="w-5 h-5 text-blue-600"></i>
-                <span class="text-xs font-semibold text-slate-700">Dengar Panduan Suara</span>
-              </button>
-            ` : ''}
           </div>
         `;
       } else {
@@ -590,6 +584,16 @@
     function startTimer(duration) {
       clearInterval(countdown);
 
+      // Mainkan audio panduan automatik
+      const exercise = categories[currentCategory].exercises[currentExerciseIndex];
+
+      stopCurrentAudio();
+
+      if (exercise.audioUrl) {
+        currentAudio = new Audio(exercise.audioUrl);
+        currentAudio.play();
+      }
+
       let remaining = duration;
       const total = duration;
 
@@ -613,6 +617,8 @@
 
         if (remaining <= 0) {
           clearInterval(countdown);
+
+          stopCurrentAudio();
 
           timerEl.textContent = "0";
           progressBar.style.width = "100%";
