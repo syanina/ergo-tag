@@ -615,6 +615,8 @@
     const progressBar = document.getElementById('progress-bar');
     const btn = document.getElementById('start-btn');
 
+    btn.onclick = startOrPause;
+
     btn.textContent = '⏸ Berhenti Sementara';
     btn.className = 'w-full px-6 py-2.5 bg-yellow-500 text-white rounded-xl font-semibold shadow-sm text-sm';
 
@@ -635,9 +637,6 @@
           progressBar.style.width = "100%";
 
           const exercises = categories[currentCategory].exercises;
-
-          btn.textContent = 'Ulang Semula Senaman';
-          btn.className = 'w-full px-6 py-2.5 bg-green-600 text-white rounded-xl font-semibold shadow-sm text-sm';
 
           btn.onclick = replayTimer;
 
@@ -693,9 +692,14 @@
 
     function replayTimer() {
       clearInterval(countdown);
+      countdown = null;
+
       stopCurrentAudio();
 
       const exercise = categories[currentCategory].exercises[currentExerciseIndex];
+
+      isPaused = false;
+
       startTimer(exercise.duration);
     }
 
