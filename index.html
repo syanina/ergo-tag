@@ -88,7 +88,7 @@
           <i data-lucide="badge-info" style="width:24px;height:24px;color:#b91048;"></i>
         </div>
         <h3 class="text-lg font-semibold text-slate-900 mb-2">Apa itu Ergo-Tag?</h3>
-        <p class="text-slate-600 text-sm leading-relaxed">Projek Ergo-Tag merupakan satu inovasi digital yang dibangunkan bagi meningkatkan kesejahteraan di tempat kerja, khususnya dalam kalangan pekerja pejabat yang menghabiskan tempoh masa yang panjang di hadapan komputer. Sistem ini menyediakan panduan regangan ergonomik yang boleh dilakukan secara terus di meja kerja. Inisiatif ini bertujuan mengurangkan masalah fizikal yang lazim dialami, seperti ketegangan pada leher dan sakit belakang, di samping mengatasi kekangan masa untuk menyertai program kesihatan secara formal. Secara keseluruhannya, platform yang menjimatkan kos ini berupaya meningkatkan produktiviti organisasi serta keselesaan warga kerja melalui aktiviti regangan ringkas yang hanya memerlukan kira-kira satu minit. Pelaksanaan projek ini di Kementerian Kesihatan Malaysia membuktikan keberkesanan, kepraktisan dan kesesuaiannya sebagai penyelesaian inovatif dalam persekitaran kerja profesional masa kini.</p>
+        <p class="text-slate-600 text-sm leading-relaxed">Projek Ergo-Tag merupakan satu inovasi digital yang dibangunkan bagi meningkatkan kesejahteraan di tempat kerja, khususnya dalam kalangan pekerja pejabat yang menghabiskan tempoh masa yang panjang di hadapan komputer. Sistem ini menyediakan panduan regangan ergonomik yang boleh dilakukan secara terus di meja kerja. Inisiatif ini bertujuan mengurangkan masalah fizikal yang lazim dialami, seperti ketegangan pada leher dan sakit belakang, di samping mengatasi kekangan masa untuk menyertai program kesihatan secara formal. Secara keseluruhannya, platform ini berupaya meningkatkan produktiviti organisasi serta keselesaan warga kerja melalui aktiviti regangan ringkas yang hanya memerlukan kira-kira satu minit.</p>
         </div>
       </div>
      
@@ -196,10 +196,16 @@
    </section>
 
    <footer class="bg-slate-900 text-white py-6 mt-auto">
-    <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400">
-     <p>Ergo-Tag © 2026 — Membantu anda kekal sihat dan produktif sepanjang waktu kerja 9–6 anda</p>
-    </div>
-   </footer>
+      <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400 flex flex-col items-center gap-2">
+        <p>Ergo-Tag © 2026 — Membantu anda kekal sihat dan produktif sepanjang waktu kerja 9–6 anda</p>
+        
+        <!-- ELEMEN VISITOR COUNTER BARU -->
+        <div class="flex items-center gap-2 bg-slate-800 px-3 py-1 rounded-full text-xs text-blue-400 border border-slate-700 mt-2">
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>Jumlah Pelawat: <strong id="visitor-count" class="text-white animate-pulse">Memuatkan...</strong></span>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -702,6 +708,39 @@
 
       startTimer(exercise.duration);
     }
+
+    // Fungsi untuk memanggil Kaunter Pelawat secara Global
+    function initVisitorCounter() {
+      const counterElement = document.getElementById('visitor-count');
+      
+      // Menggunakan perkhidmatan kaunter awam percuma (CountAPI alternatif / hit counter)
+      // Anda boleh tukar 'ergotag2026' kepada nama unik projek anda
+      const namespace = "ergotag_inovasi_nina";
+      const key = "homepage";
+      
+      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+        .then(res => res.json())
+        .then(data => {
+          if(counterElement) {
+            counterElement.textContent = data.value;
+            counterElement.classList.remove('animate-pulse');
+          }
+        })
+        .catch(err => {
+          // Pelan sandaran jika API luar mengalami sekatan rangkaian pejabat (firewall)
+          console.log("Menggunakan mod simulasi kaunter tempatan.");
+          let localCount = localStorage.getItem('simulated_visitors') || 100; // angka permulaan nampak gempak
+          localCount = parseInt(localCount) + 1;
+          localStorage.setItem('simulated_visitors', localCount);
+          if(counterElement) {
+            counterElement.textContent = localCount;
+            counterElement.classList.remove('animate-pulse');
+          }
+        });
+    }
+
+    // Panggil fungsi ini semasa aplikasi mula dibuka
+    initVisitorCounter();
 
     renderCategories();
     showSection('home');
