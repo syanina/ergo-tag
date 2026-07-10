@@ -516,13 +516,14 @@
       let visualMedia = '';
       if (exercise.videoUrl) {
         visualMedia = `
-          <div class="relative w-full h-full min-h-[220px]">
-            <img src="${exercise.videoUrl}" class="w-full h-full object-cover rounded-xl" alt="Demonstrasi Senaman" />
+          <div class="relative w-full flex items-center justify-center p-2 bg-white rounded-xl">
+            <!-- object-contain memastikan gambar mengecil secara sekata tanpa terpotong -->
+            <img src="${exercise.videoUrl}" class="max-w-full max-h-[260px] md:max-h-[320px] object-contain rounded-xl" alt="Demonstrasi Senaman" />
           </div>
         `;
       } else {
         visualMedia = `
-          <div class="w-full h-full bg-slate-100 rounded-xl flex flex-col items-center justify-center text-slate-400 p-4 text-center min-h-[220px]">
+          <div class="w-full min-h-[200px] bg-slate-100 rounded-xl flex flex-col items-center justify-center text-slate-400 p-4 text-center">
             <i data-lucide="video" class="w-10 h-10 mb-2 text-slate-300"></i>
             <span class="text-xs font-medium">Panduan Visual Demonstrasi Tidak Tersedia</span>
           </div>
@@ -530,30 +531,33 @@
       }
 
       container.innerHTML = `
-        <div class="flex flex-col sm:flex-row justify-between items-start gap-2 sm:gap-0 mb-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start gap-2 mb-6">
           <div>
             <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-1">${exercise.name}</h2>
             <p class="text-slate-500 text-xs md:text-sm">${exercise.desc}</p>
           </div>
-          <span class="text-xs font-semibold bg-blue-50 text-blue-600 px-3 py-1 rounded-full self-start sm:self-auto">${currentExerciseIndex + 1}/${exercises.length}</span>
+          <span class="text-xs font-semibold bg-blue-50 text-blue-600 px-3 py-1 rounded-full shrink-0">${currentExerciseIndex + 1}/${exercises.length}</span>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mb-6">
+        <!-- UBAH GRID DI SINI: Tukar grid-cols-1 lg:grid-cols-2 kepada flex flex-col md:flex-row untuk kawalan skrin kecil yang super kemas -->
+        <div class="flex flex-col md:flex-row gap-6 items-stretch mb-6">
           
-          <div class="bg-slate-50 border border-slate-100 rounded-2xl p-2 flex items-center justify-center overflow-hidden">
-             ${visualMedia}
+          <!-- Bahagian Gambar (Lebih Fleksibel) -->
+          <div class="w-full md:w-1/2 bg-slate-50 border border-slate-100 rounded-2xl p-2 flex items-center justify-center min-h-[220px] md:min-h-[300px]">
+            ${visualMedia}
           </div>
 
-          <div class="flex flex-col justify-between bg-slate-50 rounded-2xl border border-slate-100 p-4 md:p-6">
-            <div class="flex flex-col items-center justify-center text-center my-auto">
-              <div class="w-full bg-slate-200 rounded-full h-2 mb-4 overflow-hidden">
+          <!-- Bahagian Pemasa / Timer -->
+          <div class="w-full md:w-1/2 flex flex-col justify-between bg-slate-50 rounded-2xl border border-slate-100 p-4 md:p-6">
+            <div class="flex flex-col items-center justify-center text-center my-auto py-4">
+              <div class="w-full bg-slate-200 rounded-full h-2 mb-6 overflow-hidden">
                 <div id="progress-bar" class="h-full bg-blue-600 transition-[width] duration-200" style="width:0%"></div>
               </div>
-              <div class="w-24 h-28 md:w-28 md:h-28 rounded-full border-4 border-blue-500 bg-white flex flex-col items-center justify-center mb-2 shadow-sm">
+              <div class="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-blue-500 bg-white flex flex-col items-center justify-center mb-2 shadow-sm">
                 <span class="timer-text text-2xl md:text-3xl font-bold text-slate-900">${exercise.duration}</span>
+                <span class="text-[10px] text-slate-400 -mt-1">saat</span>
               </div>
-              <p class="text-slate-400 text-[11px] mb-4">saat</p>
-              <button id="start-btn" onclick="startOrPause()" class="w-full px-6 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm text-sm">
+              <button id="start-btn" onclick="startOrPause()" class="w-full mt-4 px-6 py-2.5 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition shadow-sm text-sm">
                 Mula Senaman
               </button>
             </div>
@@ -561,6 +565,7 @@
 
         </div>
 
+        <!-- Bahagian Cara Pelaksanaan -->
         <div class="mb-6 bg-white border border-slate-100 rounded-xl p-4">
           <h3 class="font-bold text-slate-900 text-sm md:text-base mb-3">Cara Pelaksanaan:</h3>
           <ol class="space-y-2.5">
@@ -573,16 +578,15 @@
           </ol>
         </div>
 
-        <div class="flex gap-4 border-t border-slate-100 pt-4">
-            <button
-              onclick="backToCategories()"
-              class="px-3 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-xs">
-              ← Kembali ke Kategori
+        <!-- Butang Navigasi Bawah -->
+        <div class="flex gap-2 border-t border-slate-100 pt-4 flex-wrap">
+            <button onclick="backToCategories()" class="px-2 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-xs">
+              ← Kategori
             </button>
-          <button onclick="prevExercise()" ${currentExerciseIndex === 0 ? 'disabled class="px-3 py-1.5 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed text-xs"' : 'class="px-3 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-xs"'} >
+          <button onclick="prevExercise()" ${currentExerciseIndex === 0 ? 'disabled class="px-2 py-1.5 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed text-xs"' : 'class="px-2 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium text-xs"'} >
             ← Sebelumnya
           </button>
-          <button onclick="nextExercise()" ${currentExerciseIndex === exercises.length - 1 ? 'disabled class="px-3 py-1.5 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed ml-auto text-xs"' : 'class="px-3 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium ml-auto text-xs"'} >
+          <button onclick="nextExercise()" ${currentExerciseIndex === exercises.length - 1 ? 'disabled class="px-2 py-1.5 border border-slate-200 text-slate-300 rounded-lg cursor-not-allowed ml-auto text-xs"' : 'class="px-2 py-1.5 border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-lg transition font-medium ml-auto text-xs"'} >
             Seterusnya →
           </button>
         </div>
