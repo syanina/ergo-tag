@@ -729,7 +729,7 @@
         .catch(err => {
           // Pelan sandaran jika API luar mengalami sekatan rangkaian pejabat (firewall)
           console.log("Menggunakan mod simulasi kaunter tempatan.");
-          let localCount = localStorage.getItem('simulated_visitors') || 100; // angka permulaan nampak gempak
+          let localCount = localStorage.getItem('simulated_visitors') || 0; // angka permulaan nampak gempak
           localCount = parseInt(localCount) + 1;
           localStorage.setItem('simulated_visitors', localCount);
           if(counterElement) {
