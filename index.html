@@ -58,7 +58,10 @@
     <div class="max-w-6xl mx-auto px-4 relative z-10 w-full">
      <div class="text-center mb-12">
       <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">Selamat Datang ke Ergo-Tag</h2>
-      <p id="app-tagline" class="text-xl text-slate-600 mb-8 max-w-2xl mx-auto">Kesejahteraan Tempat Kerja untuk Waktu Kerja 9–6 Anda</p>
+      <h1 class="text-3xl md:text-3xl font-bold text-slate-900 mb-4 tracking-tight">Inovasi Program Pementoran Kompetensi IPKKM Tahun 2026</h1>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-4 max-w-2xl mx-auto"><strong>Menti:</strong> Norsyanina Binti Zulkifli</p>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-4 max-w-2xl mx-auto"><strong>Mentor:</strong> John Raymond Anak Achon</p>
+      <p id="app-tagline" class="text-xl text-slate-600 mb-4 max-w-2xl mx-auto"><strong>Bahagian:</strong> Bahagian Pengurusan Maklumat</p>
       <button onclick="showSection('exercises')" class="px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition inline-flex items-center justify-center gap-2 shadow-md hover:shadow-lg"> 
         <i data-lucide="arrow-right" style="width:20px;height:20px;"></i> Mula Bersenam 
       </button>
@@ -95,6 +98,7 @@
      <div class="bg-blue-50 border border-blue-100 text-slate-700 rounded-xl p-6 text-center max-w-4xl mx-auto shadow-sm">
       <p class="text-slate-600 text-sm md:text-base"><strong>💡 Tip Pro:</strong> Ambil rehat selama 1 minit setiap 60–90 minit sepanjang waktu kerja 9 pagi – 6 petang anda untuk kesan yang maksimum.</p>
      </div>
+
     </div>
    </section>
 
@@ -198,12 +202,6 @@
    <footer class="bg-slate-900 text-white py-6 mt-auto">
       <div class="max-w-6xl mx-auto px-4 text-center text-sm text-slate-400 flex flex-col items-center gap-2">
         <p>Ergo-Tag © 2026 — Membantu anda kekal sihat dan produktif sepanjang waktu kerja 9–6 anda</p>
-        
-        <!-- ELEMEN VISITOR COUNTER BARU -->
-        <div class="flex items-center gap-2 bg-slate-800 px-3 py-1 rounded-full text-xs text-blue-400 border border-slate-700 mt-2">
-          <i data-lucide="users" class="w-4 h-4"></i>
-          <span>Jumlah Pelawat: <strong id="visitor-count" class="text-white animate-pulse">Memuatkan...</strong></span>
-        </div>
       </div>
     </footer>
   </div>
@@ -712,39 +710,6 @@
 
       startTimer(exercise.duration);
     }
-
-    // Fungsi untuk memanggil Kaunter Pelawat secara Global
-    function initVisitorCounter() {
-      const counterElement = document.getElementById('visitor-count');
-      
-      // Menggunakan perkhidmatan kaunter awam percuma (CountAPI alternatif / hit counter)
-      // Anda boleh tukar 'ergotag2026' kepada nama unik projek anda
-      const namespace = "ergotag_inovasi_nina";
-      const key = "homepage";
-      
-      fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-        .then(res => res.json())
-        .then(data => {
-          if(counterElement) {
-            counterElement.textContent = data.value;
-            counterElement.classList.remove('animate-pulse');
-          }
-        })
-        .catch(err => {
-          // Pelan sandaran jika API luar mengalami sekatan rangkaian pejabat (firewall)
-          console.log("Menggunakan mod simulasi kaunter tempatan.");
-          let localCount = localStorage.getItem('simulated_visitors') || 0; // angka permulaan nampak gempak
-          localCount = parseInt(localCount) + 1;
-          localStorage.setItem('simulated_visitors', localCount);
-          if(counterElement) {
-            counterElement.textContent = localCount;
-            counterElement.classList.remove('animate-pulse');
-          }
-        });
-    }
-
-    // Panggil fungsi ini semasa aplikasi mula dibuka
-    initVisitorCounter();
 
     renderCategories();
     showSection('home');
